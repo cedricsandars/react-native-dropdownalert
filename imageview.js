@@ -33,7 +33,6 @@ export default class ImageView extends Component {
       style['height'] = DEFAULT_IMAGE_DIMENSIONS;
     }
     const src = isRemote ? { uri: source } : source;
-    console.warn(style);
     return type == 'custom' ? <Image {...imageProps} style={{"alignSelf": "center", "height": 45, "padding": 5, "width": 75}} source={src} /> : <Image {...imageProps} style={style} source={src} />;
   }
 }
