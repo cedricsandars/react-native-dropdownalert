@@ -442,7 +442,7 @@ export default class DropdownAlert extends Component {
     if (this.props.renderImage) {
       return this.props.renderImage(this.props, this.alertData);
     }
-    return <ImageView style={StyleSheet.flatten(this.props.imageStyle)} source={source} />;
+    return <ImageView style={StyleSheet.flatten(this.props.imageStyle)} source={source} type={this.alertData.type} />;
   }
   _renderTitle() {
     if (this.props.renderTitle) {

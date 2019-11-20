@@ -8,6 +8,7 @@ export default class ImageView extends Component {
     style: PropTypes.object,
     source: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     imageProps: PropTypes.object,
+    type: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   };
   static defaultProps = {
     style: {
@@ -20,7 +21,7 @@ export default class ImageView extends Component {
     imageProps: {},
   };
   render() {
-    const { source, style, imageProps } = this.props;
+    const { source, style, imageProps, type } = this.props;
     if (source == null) {
       return null;
     }
@@ -32,6 +33,7 @@ export default class ImageView extends Component {
       style['height'] = DEFAULT_IMAGE_DIMENSIONS;
     }
     const src = isRemote ? { uri: source } : source;
-    return <Image {...imageProps} style={style} source={src} />;
+    console.warn(style);
+    return type == 'custom' ? <Image {...imageProps} style={{"alignSelf": "center", "height": 45, "padding": 5, "width": 75}} source={src} /> : <Image {...imageProps} style={style} source={src} />;
   }
 }
