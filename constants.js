@@ -1,6 +1,6 @@
 import { StatusBar, Platform, Dimensions } from 'react-native';
 
-export const DEFAULT_IMAGE_DIMENSIONS = 36;
+export const DEFAULT_IMAGE_DIMENSIONS = 20;
 export const WINDOW = Dimensions.get('window');
 export const HEIGHT = WINDOW.height;
 export const WIDTH = WINDOW.width;
